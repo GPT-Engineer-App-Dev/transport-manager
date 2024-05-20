@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Heading, VStack, FormControl, FormLabel, Input, Button, Table, Thead, Tbody, Tr, Th, Td, IconButton, Flex } from "@chakra-ui/react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 
 const VehicleManagement = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -29,6 +31,13 @@ const VehicleManagement = () => {
 
   return (
     <Container maxW="container.md" mt={10}>
+      <Flex mb={4} align="center">
+        <Link to="/">
+          <Button leftIcon={<ArrowBackIcon />} colorScheme="teal" variant="outline">
+            Back
+          </Button>
+        </Link>
+      </Flex>
       <Heading as="h2" size="xl" mb={6}>Vehicle Management</Heading>
       <form onSubmit={handleSubmit}>
         <VStack spacing={4} mb={6}>
